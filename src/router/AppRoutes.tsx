@@ -6,6 +6,11 @@ import GlobalLayout from '../components/layout/GlobalLayout';
 import AuthLayout from '../layouts/AuthLayout';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 
+// Import Halaman (Tanggung Jawab Anggota 5)
+import UserProfile from '../pages/UserProfile';
+import Settings from '../pages/Settings';
+import FAQ from '../pages/FAQ';
+
 // Lazy loaded page components (Tanggung Jawab Anggota 1)
 const Login = lazy(() => import('../pages/auth/Login'));
 const Dashboard = lazy(() => import('../pages/dashboard/Dashboard'));
@@ -92,16 +97,12 @@ export const AppRoutes: React.FC = () => {
               }
             />
 
-            {/* Modul Akun & Pengaturan (Anggota 4) */}
-            <Route
-              path="/pengaturan"
-              element={
-                <ModulePlaceholder
-                  title="Pengaturan Akun & Preferensi Sistem"
-                  assignee="Anggota 4 (Modul Settings)"
-                />
-              }
-            />
+            {/* Modul User Profile, Settings & FAQ (Anggota 5) */}
+            <Route path="/pengaturan" element={<UserProfile />} />
+            <Route path="/profile" element={<UserProfile />} />
+            <Route path="/akun" element={<UserProfile />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/faq" element={<FAQ />} />
           </Route>
         </Route>
 
