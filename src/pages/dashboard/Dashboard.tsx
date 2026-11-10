@@ -1,10 +1,14 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
   Folder,
   TrendingUp,
   CheckCircle2,
   FolderOpen,
+  PlusCircle,
+  FileText,
+  MessageSquare,
+  Sparkles,
 } from 'lucide-react';
 import { sampleContractData } from '../../data/sampleContractData';
 
@@ -12,7 +16,6 @@ export const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const contract = sampleContractData;
 
-  // Extract recent activities exactly as in Flutter _extractRecentActivities
   const activities = [
     {
       title: 'Laporan Harian Ditambahkan',
@@ -43,7 +46,6 @@ export const Dashboard: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* 1. Welcome Section with Corporate Branding */}
       <div className="flex items-center justify-between">
         <div>
           <p className="text-xs text-corporate-slate font-semibold">Selamat Datang,</p>
@@ -66,9 +68,48 @@ export const Dashboard: React.FC = () => {
         </div>
       </div>
 
-      {/* 2. 3 Grid Stat Cards */}
+      <div className="bg-white rounded-2xl border border-corporate-border p-4 sm:p-5 shadow-sm">
+        <div className="flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wider text-corporate-navy">
+          <Sparkles className="w-4 h-4 text-corporate-navy" />
+          <span>Aksi Cepat Formulir Pengawasan</span>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <Link
+            to="/kontrak/tambah"
+            className="flex items-center gap-3 p-3 rounded-xl bg-corporate-slateLighter hover:bg-slate-200 text-corporate-navy font-bold text-xs transition-colors border border-corporate-border"
+          >
+            <PlusCircle className="w-5 h-5 shrink-0" />
+            <div className="truncate">
+              <span className="block truncate">Tambah Kontrak Baru</span>
+              <span className="text-[10px] text-corporate-slate font-normal">HTTP POST / Form Kontrak</span>
+            </div>
+          </Link>
+
+          <Link
+            to="/laporan/buat"
+            className="flex items-center gap-3 p-3 rounded-xl bg-corporate-slateLighter hover:bg-slate-200 text-corporate-navy font-bold text-xs transition-colors border border-corporate-border"
+          >
+            <FileText className="w-5 h-5 shrink-0" />
+            <div className="truncate">
+              <span className="block truncate">Buat Laporan Harian</span>
+              <span className="text-[10px] text-corporate-slate font-normal">HTTP POST / Form Laporan</span>
+            </div>
+          </Link>
+
+          <Link
+            to="/feedback"
+            className="flex items-center gap-3 p-3 rounded-xl bg-corporate-slateLighter hover:bg-slate-200 text-corporate-navy font-bold text-xs transition-colors border border-corporate-border"
+          >
+            <MessageSquare className="w-5 h-5 shrink-0" />
+            <div className="truncate">
+              <span className="block truncate">Feedback & Evaluasi</span>
+              <span className="text-[10px] text-corporate-slate font-normal">HTTP POST / Star Rating</span>
+            </div>
+          </Link>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {/* Total Kontrak */}
         <div className="bg-white p-4 rounded-2xl border border-corporate-border shadow-sm flex flex-col justify-between">
           <div className="flex items-start justify-between">
             <span className="text-xs font-bold text-corporate-slate">Total Kontrak</span>
@@ -79,7 +120,6 @@ export const Dashboard: React.FC = () => {
           <p className="text-2xl font-black text-corporate-navy mt-3">1</p>
         </div>
 
-        {/* Kontrak Aktif */}
         <div className="bg-white p-4 rounded-2xl border border-corporate-border shadow-sm flex flex-col justify-between">
           <div className="flex items-start justify-between">
             <span className="text-xs font-bold text-corporate-slate">Kontrak Aktif</span>
@@ -90,7 +130,6 @@ export const Dashboard: React.FC = () => {
           <p className="text-2xl font-black text-corporate-navy mt-3">1</p>
         </div>
 
-        {/* Kontrak Selesai */}
         <div className="bg-white p-4 rounded-2xl border border-corporate-border shadow-sm flex flex-col justify-between">
           <div className="flex items-start justify-between">
             <span className="text-xs font-bold text-corporate-slate">Kontrak Selesai</span>
@@ -102,7 +141,6 @@ export const Dashboard: React.FC = () => {
         </div>
       </div>
 
-      {/* 3. Carousel Card (Contract Overview) */}
       <div
         onClick={() => navigate(`/kontrak/${contract.id}`)}
         className="bg-white rounded-2xl border border-corporate-border p-6 shadow-sm cursor-pointer hover:border-slate-300 transition-all"
@@ -117,7 +155,6 @@ export const Dashboard: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-6 mt-6">
-          {/* Circular Progress Gauge */}
           <div className="relative w-20 h-20 flex items-center justify-center shrink-0">
             <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
               <path
@@ -147,7 +184,6 @@ export const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          {/* Metric Details */}
           <div className="space-y-1">
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-corporate-navy inline-block" />
@@ -159,13 +195,11 @@ export const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        {/* Carousel Dots indicator */}
         <div className="flex justify-center items-center gap-1.5 mt-5">
           <div className="w-6 h-1.5 bg-corporate-navy rounded-full" />
         </div>
       </div>
 
-      {/* 4. Aktivitas Terkini Section */}
       <div className="space-y-3">
         <h2 className="text-base font-bold text-slate-800">Aktivitas Terkini</h2>
         <div className="space-y-3">

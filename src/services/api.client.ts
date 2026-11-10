@@ -7,7 +7,6 @@ export const apiClient = axios.create({
   headers: API_CONFIG.headers,
 });
 
-// Request Interceptor: Inject Token & Dev Logging
 apiClient.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
     const token = localStorage.getItem('tata_saka_token');
@@ -24,7 +23,6 @@ apiClient.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Response Interceptor: Handle Global Errors (401, 403, 500)
 apiClient.interceptors.response.use(
   (response) => {
     if (import.meta.env.DEV) {
@@ -34,7 +32,6 @@ apiClient.interceptors.response.use(
   },
   (error: AxiosError) => {
     if (error.response?.status === 401) {
-      // Sesi telah habis atau token invalid
       localStorage.removeItem('tata_saka_token');
       localStorage.removeItem('tata_saka_user');
       if (window.location.pathname !== '/login') {
@@ -53,4 +50,3 @@ apiClient.interceptors.response.use(
 );
 
 export default apiClient;
-

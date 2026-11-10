@@ -17,7 +17,6 @@ export default function UserProfile() {
 
     return (
     <main className="min-h-screen bg-corporate-softGray pb-12">
-      {/* Header Bar Top */}
         <header className="bg-white border-b border-corporate-border px-6 py-4 flex items-center justify-between sticky top-0 z-10">
         <div className="w-5"></div>
         <h1 className="text-lg font-bold text-corporate-navy font-sans">
@@ -33,7 +32,6 @@ export default function UserProfile() {
         </header>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-6 space-y-6">
-        {/* Profile Card Header */}
         <section className="flex items-center gap-4 py-2" aria-label="Informasi Pengguna">
             <div className="relative">
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gray-200 rounded-full flex items-center justify-center text-gray-400">
@@ -56,7 +54,6 @@ export default function UserProfile() {
             </div>
         </section>
 
-        {/* Informasi Profil Section */}
         <section aria-labelledby="informasi-profil-heading">
             <h3 id="informasi-profil-heading" className="text-sm font-bold text-corporate-navy mb-3">
             Informasi Profil
@@ -88,7 +85,6 @@ export default function UserProfile() {
             </article>
         </section>
 
-        {/* Proyek Terkait Section */}
         <section aria-labelledby="proyek-terkait-heading">
             <h3 id="proyek-terkait-heading" className="text-sm font-bold text-corporate-navy mb-3">
             Proyek Terkait
@@ -108,14 +104,12 @@ export default function UserProfile() {
             </article>
         </section>
 
-        {/* Menu Lainnya Section */}
         <section aria-labelledby="menu-lainnya-heading">
             <h3 id="menu-lainnya-heading" className="text-sm font-bold text-corporate-navy mb-3">
             Menu Lainnya
             </h3>
             <article className="bg-white rounded-2xl border border-corporate-border divide-y divide-corporate-border shadow-sm overflow-hidden">
             
-            {/* Pengaturan -> Ke /settings */}
             <button 
                 onClick={() => navigate('/settings')}
                 className="w-full flex items-center justify-between p-4 hover:bg-corporate-slateLighter transition-colors text-left focus:outline-none focus:bg-corporate-slateLighter"
@@ -133,7 +127,6 @@ export default function UserProfile() {
                 <ChevronRight className="w-5 h-5 text-corporate-slate" />
             </button>
 
-            {/* Keamanan -> Ke /settings */}
             <button 
                 onClick={() => navigate('/settings')}
                 className="w-full flex items-center justify-between p-4 hover:bg-corporate-slateLighter transition-colors text-left focus:outline-none focus:bg-corporate-slateLighter"
@@ -151,7 +144,6 @@ export default function UserProfile() {
                     <ChevronRight className="w-5 h-5 text-corporate-slate" />
             </button>
 
-            {/* Bantuan & FAQ -> Ke /faq */}
             <button 
                 onClick={() => navigate('/faq')}
                 className="w-full flex items-center justify-between p-4 hover:bg-corporate-slateLighter transition-colors text-left focus:outline-none focus:bg-corporate-slateLighter"

@@ -14,7 +14,6 @@ export default function Settings() {
 
         <section className="max-w-3xl w-full mx-auto flex-grow space-y-6" aria-label="Formulir Pengaturan dan Keamanan">
         
-        {/* Informasi Akun */}
         <article className="bg-corporate-surface rounded-2xl shadow-sm border border-corporate-border p-6 sm:p-8 space-y-4">
             <h2 className="text-lg font-bold text-corporate-navy flex items-center gap-2 border-b border-corporate-border pb-3">
             <User className="w-5 h-5 text-corporate-slate" aria-hidden="true" />
@@ -48,7 +47,6 @@ export default function Settings() {
             </div>
         </article>
 
-        {/* Keamanan & Kata Sandi */}
         <article className="bg-corporate-surface rounded-2xl shadow-sm border border-corporate-border p-6 sm:p-8 space-y-4">
             <h2 className="text-lg font-bold text-corporate-navy flex items-center gap-2 border-b border-corporate-border pb-3">
             <Lock className="w-5 h-5 text-corporate-slate" aria-hidden="true" />
@@ -93,7 +91,6 @@ export default function Settings() {
             </div>
         </article>
 
-        {/* Preferensi Notifikasi */}
         <article className="bg-corporate-surface rounded-2xl shadow-sm border border-corporate-border p-6 sm:p-8 space-y-4">
             <h2 className="text-lg font-bold text-corporate-navy flex items-center gap-2 border-b border-corporate-border pb-3">
             <Bell className="w-5 h-5 text-corporate-slate" aria-hidden="true" />
@@ -110,7 +107,6 @@ export default function Settings() {
             </div>
         </article>
 
-        {/* Tombol Simpan */}
         <div className="flex justify-end pt-2 pb-8">
             <button
             type="button"

@@ -4,6 +4,7 @@ import {
   FileText,
   TrendingUp,
   User,
+  MessageSquare,
 } from 'lucide-react';
 import { NavMenuItem } from '../types/navigation.types';
 
@@ -22,6 +23,11 @@ export const MAIN_NAV_ITEMS: NavMenuItem[] = [
     title: 'Laporan',
     path: '/laporan',
     icon: <FileText className="w-5 h-5" />,
+  },
+  {
+    title: 'Feedback Evaluasi',
+    path: '/feedback',
+    icon: <MessageSquare className="w-5 h-5" />,
   },
   {
     title: 'Timeline',
