@@ -19,6 +19,8 @@ const NotFound = lazy(() => import('../pages/NotFound'));
 // Modul Laporan (Anggota 3)
 const Laporan = lazy(() => import('../pages/laporan/Laporan'));
 const DataLaporan = lazy(() => import('../pages/laporan/DataLaporan'));
+// [103122400022] - a. Halaman Detail Item (Dynamic Route)
+const DetailLaporan = lazy(() => import('../pages/laporan/DetailLaporan'));
 const BuatLaporanHarian = lazy(() => import('../pages/laporan/BuatLaporanHarian'));
 const BuatLaporanMingguan = lazy(() => import('../pages/laporan/BuatLaporanMingguan'));
 
@@ -84,6 +86,9 @@ export const AppRoutes: React.FC = () => {
             {/* Modul Laporan (Anggota 3) */}
             <Route path="/laporan" element={<Laporan />} />
             <Route path="/laporan/data" element={<DataLaporan />} />
+            <Route path="/laporan/data/:id" element={<DetailLaporan />} />
+            {/* [103122400022] - a. Halaman Detail Item (Dynamic Route) */}
+            <Route path="/laporan/detail/:id" element={<DetailLaporan />} />
             <Route path="/laporan/harian" element={<BuatLaporanHarian />} />
             <Route path="/laporan/harian/buat" element={<BuatLaporanHarian />} />
             <Route path="/laporan/mingguan" element={<BuatLaporanMingguan />} />
