@@ -6,8 +6,9 @@ import GlobalLayout from '../components/layout/GlobalLayout';
 import AuthLayout from '../layouts/AuthLayout';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 
-import UserProfile from '../pages/UserProfile';
-import Settings from '../pages/Settings';
+// Import Halaman
+import UserProfile from '../pages/akun/UserProfile';
+import Settings from '../pages/akun/Settings';
 import FAQ from '../pages/FAQ';
 
 const Dashboard = lazy(() => import('../pages/dashboard/Dashboard'));
@@ -16,10 +17,17 @@ const NotFound = lazy(() => import('../pages/NotFound'));
 const Login = lazy(() => import('../pages/auth/Login'));
 const Register = lazy(() => import('../pages/auth/Register'));
 
+// Modul Form
 const FormKontrak = lazy(() => import('../pages/forms/FormKontrak'));
 const FormKegiatan = lazy(() => import('../pages/forms/FormKegiatan'));
 const FormLaporan = lazy(() => import('../pages/forms/FormLaporan'));
 const FeedbackForm = lazy(() => import('../pages/forms/FeedbackForm'));
+
+// Modul Laporan 
+const Laporan = lazy(() => import('../pages/laporan/Laporan'));
+const DataLaporan = lazy(() => import('../pages/laporan/DataLaporan'));
+const BuatLaporanHarian = lazy(() => import('../pages/laporan/BuatLaporanHarian'));
+const BuatLaporanMingguan = lazy(() => import('../pages/laporan/BuatLaporanMingguan'));
 
 interface PlaceholderProps {
   title: string;
@@ -123,18 +131,13 @@ export const AppRoutes: React.FC = () => {
               element={<FormKegiatan />}
             />
 
-            <Route
-              path="/laporan"
-              element={
-                <ModulePlaceholder
-                  title="Pusat Laporan & Back-Up Quantity (BOQ)"
-                  assignee="Anggota 3"
-                  actionButtons={[
-                    { label: '+ Buat Laporan Harian', to: '/laporan/buat' },
-                  ]}
-                />
-              }
-            />
+            {/* Modul Laporan */}
+            <Route path="/laporan" element={<Laporan />} />
+            <Route path="/laporan/data" element={<DataLaporan />} />
+            <Route path="/laporan/harian" element={<BuatLaporanHarian />} />
+            <Route path="/laporan/harian/buat" element={<BuatLaporanHarian />} />
+            <Route path="/laporan/mingguan" element={<BuatLaporanMingguan />} />
+            <Route path="/laporan/mingguan/buat" element={<BuatLaporanMingguan />} />
 
             <Route path="/laporan/buat" element={<FormLaporan />} />
 
