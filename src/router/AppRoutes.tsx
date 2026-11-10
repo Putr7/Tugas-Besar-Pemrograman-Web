@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { Routes, Route, Navigate, Link } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
 import GuestRoute from './GuestRoute';
 import GlobalLayout from '../components/layout/GlobalLayout';
@@ -16,6 +16,7 @@ const NotFound = lazy(() => import('../pages/NotFound'));
 
 const Login = lazy(() => import('../pages/auth/Login'));
 const Register = lazy(() => import('../pages/auth/Register'));
+const Hero = lazy(() => import('../Hero/hero'));
 
 // Modul Form
 const FormKontrak = lazy(() => import('../pages/forms/FormKontrak'));
@@ -81,6 +82,8 @@ export const AppRoutes: React.FC = () => {
       }
     >
       <Routes>
+        <Route path="/" element={<Hero />} />
+
         <Route element={<GuestRoute />}>
           <Route element={<AuthLayout />}>
             <Route path="/login" element={<Login />} />
@@ -90,8 +93,6 @@ export const AppRoutes: React.FC = () => {
 
         <Route element={<ProtectedRoute />}>
           <Route element={<GlobalLayout />}>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-
             <Route path="/dashboard" element={<Dashboard />} />
 
             <Route
