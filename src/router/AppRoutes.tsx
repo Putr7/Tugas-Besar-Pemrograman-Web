@@ -137,7 +137,7 @@ export const AppRoutes: React.FC = () => {
             <Route path="/laporan/harian" element={<BuatLaporanHarian />} />
             <Route path="/laporan/harian/buat" element={<BuatLaporanHarian />} />
             <Route path="/laporan/mingguan" element={<BuatLaporanMingguan />} />
-            <Route path="/laporan/mingguan/buat" element={<BuatLaporanMingguan />} />
+            <Route path="/laporan/harian/buat" element={<FormLaporan />} />
 
             <Route path="/laporan/buat" element={<FormLaporan />} />
 
