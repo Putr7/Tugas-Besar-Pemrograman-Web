@@ -8,7 +8,6 @@ import {
   PlusCircle,
   FileText,
   MessageSquare,
-  Sparkles,
 } from 'lucide-react';
 import { sampleContractData } from '../../data/sampleContractData';
 
@@ -70,8 +69,7 @@ export const Dashboard: React.FC = () => {
 
       <div className="bg-white rounded-2xl border border-corporate-border p-4 sm:p-5 shadow-sm">
         <div className="flex items-center gap-2 mb-3 text-xs font-bold uppercase tracking-wider text-corporate-navy">
-          <Sparkles className="w-4 h-4 text-corporate-navy" />
-          <span>Aksi Cepat Formulir Pengawasan</span>
+          <span>Formulir Pengawasan</span>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <Link
