@@ -48,7 +48,6 @@ export const NavItem: React.FC<NavItemProps> = ({ item, isCollapsed = false, onC
             </span>
           )}
 
-          {/* Tooltip on collapsed desktop view */}
           {isCollapsed && (
             <div className="absolute left-full ml-3 px-2.5 py-1 bg-corporate-navy text-white text-xs font-medium rounded-md whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-50 shadow-md">
               {item.title}
@@ -61,4 +60,3 @@ export const NavItem: React.FC<NavItemProps> = ({ item, isCollapsed = false, onC
 };
 
 export default NavItem;
-

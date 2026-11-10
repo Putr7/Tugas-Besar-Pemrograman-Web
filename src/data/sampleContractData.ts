@@ -30,6 +30,7 @@ export interface WeeklyReport {
 export interface Kegiatan {
   namaKegiatan: string;
   lokasi: string;
+  sumberDana?: string;
   kontraktor: string;
   penggunaAnggaran: string;
   stafTeknis1: string;

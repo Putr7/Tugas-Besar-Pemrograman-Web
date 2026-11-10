@@ -23,7 +23,6 @@ export const Sidebar: React.FC = () => {
 
   const sidebarContent = (isCollapsed: boolean, isMobile: boolean = false) => (
     <div className="flex flex-col h-full bg-white border-r border-corporate-border select-none">
-      {/* Brand Header */}
       <div
         className={`h-16 flex items-center px-4 border-b border-corporate-border ${
           isCollapsed && !isMobile ? 'justify-center' : 'justify-between'
@@ -62,7 +61,6 @@ export const Sidebar: React.FC = () => {
         )}
       </div>
 
-      {/* Nav Items List */}
       <div className="flex-1 overflow-y-auto px-3 py-4 space-y-1">
         {(!isCollapsed || isMobile) && (
           <div className="px-3 pb-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
@@ -79,7 +77,6 @@ export const Sidebar: React.FC = () => {
         ))}
       </div>
 
-      {/* Sidebar Footer / Toggle & Logout */}
       <div className="p-3 border-t border-corporate-border space-y-1">
         <button
           onClick={logout}

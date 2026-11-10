@@ -54,7 +54,6 @@ export const Navbar: React.FC = () => {
 
   return (
     <header className="h-16 bg-white border-b border-corporate-border px-4 sm:px-6 flex items-center justify-between sticky top-0 z-30 shadow-sm">
-      {/* Left: Mobile Drawer Button & Desktop Toggle */}
       <div className="flex items-center gap-3">
         <button
           type="button"
@@ -83,7 +82,6 @@ export const Navbar: React.FC = () => {
         </h1>
       </div>
 
-      {/* Right: Notifications & User Avatar */}
       <div className="flex items-center gap-3">
         <button
           type="button"
